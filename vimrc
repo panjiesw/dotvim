@@ -22,6 +22,8 @@ filetype plugin indent on
 
 syntax on
 
+highlight clear SignColumn
+
 " NerdTree autochdir
 set autochdir
 let NERDTreeChDirMode=2
