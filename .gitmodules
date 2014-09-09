@@ -49,3 +49,6 @@
 [submodule "bundle/local-vimrc"]
 	path = bundle/local-vimrc
 	url = https://github.com/MarcWeber/vim-addon-local-vimrc.git
+[submodule "bundle/coffeescript"]
+	path = bundle/coffeescript
+	url = https://github.com/kchmck/vim-coffee-script.git

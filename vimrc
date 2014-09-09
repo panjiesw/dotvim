@@ -22,9 +22,8 @@ call pathogen#helptags()
 set autoindent
 set expandtab
 set tabstop=4 softtabstop=4 shiftwidth=4
-filetype plugin indent on
-
 syntax on
+filetype plugin indent on
 
 highlight clear SignColumn
 
@@ -37,7 +36,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/build/*,*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " airline
@@ -55,6 +54,16 @@ let g:indentLine_char='│'
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+" Remove trailing whitespace on write
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python,javascript,coffee autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 set number
 set numberwidth=5
