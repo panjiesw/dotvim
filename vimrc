@@ -2,6 +2,10 @@ set nocompatible
 set t_Co=256
 set hidden
 
+" Autoreload file
+set autoread
+au CursorHold * checktime
+
 " Send more characters for redraws
 set ttyfast
 
@@ -27,6 +31,7 @@ highlight clear SignColumn
 " NerdTree autochdir
 set autochdir
 let NERDTreeChDirMode=2
+let g:nerdtree_tabs_open_on_console_startup=1
 
 " CtrlP
 let g:ctrlp_map = '<leader>t'
