@@ -53,6 +53,9 @@ let g:indentLine_color_term=159
 let g:indentLine_color_gui='#09AA08'
 let g:indentLine_char='│'
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+
 set number
 set numberwidth=5
 set cursorline
