@@ -6,9 +6,21 @@ snippet mre "CommonJS require" b
 ${1:var }${3:$2} = require("${2:module}")${4:;}$0
 endsnippet
 
-snippet gulp "Gulp Task" b
+snippet gt "Gulp Task" b
 gulp.task("$1", function($2) {
 	$0
 });
+endsnippet
+
+snippet gts "Gulp Tasks (list)" b
+gulp.task("$1", [$2]);$0
+endsnippet
+
+snippet gs "Gulp src" b
+gulp.src(${1:"$2"})$0
+endsnippet
+
+snippet gd "Gulp dest" b
+gulp.dest(${1:"$2"})$0
 endsnippet
 
