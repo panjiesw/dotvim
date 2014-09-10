@@ -63,7 +63,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-autocmd FileType c,cpp,java,php,ruby,python,javascript,coffee autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType html,jinja,c,cpp,java,php,ruby,python,javascript,coffee autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 set number
 set numberwidth=5
@@ -100,4 +100,10 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
+
+" Copas
+set pastetoggle=<F10>
+inoremap <C-v> <F10><C-r>+<F10>
+vnoremap <C-c> "+y
+
 

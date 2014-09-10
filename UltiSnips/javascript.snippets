@@ -1,0 +1,14 @@
+snippet mod "CommonJS module exports" b
+module.exports = $0
+endsnippet
+
+snippet mre "CommonJS require" b
+${1:var }${3:$2} = require("${2:module}")${4:;}$0
+endsnippet
+
+snippet gulp "Gulp Task" b
+gulp.task("$1", function($2) {
+	$0
+});
+endsnippet
+
