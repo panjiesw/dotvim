@@ -36,12 +36,14 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/node_modules/*,*/bower_components/*,*/build/*,*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/node_modules/*,*/bower_components/*,*/__pycache__/*,*/build/*,*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -75,6 +77,10 @@ set backspace=indent,eol,start
 set cul
 
 let delimitMate_expand_cr=1
+
+" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType jinja,jinja2,html,css EmmetInstall
 
 " move tabs to the end for new, single buffers (exclude splits)
 autocmd BufNew * if winnr('$') == 1 | tabmove99 | endif
